@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DevicesInfoDialog</class>
+ <widget class="QDialog" name="DevicesInfoDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>496</width>
+    <height>343</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <row>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Host API</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Max Inputs</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Default Low Input Latency</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Default Low Output Latency</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Default High Input Latency</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Default High Output Latency</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>Default Sample Rate</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Attribute</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Value</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
