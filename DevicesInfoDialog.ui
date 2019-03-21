@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>496</width>
-    <height>343</height>
+    <width>579</width>
+    <height>373</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,72 +15,45 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>All Devices</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Input Devices</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Output Devices</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Default Devices</string>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item>
       <widget class="QListWidget" name="listWidget">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QTableWidget" name="tableWidget">
-       <row>
-        <property name="text">
-         <string>Name</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Host API</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Max Inputs</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Default Low Input Latency</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Default Low Output Latency</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Default High Input Latency</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Default High Output Latency</string>
-        </property>
-       </row>
-       <row>
-        <property name="text">
-         <string>Default Sample Rate</string>
-        </property>
-       </row>
-       <column>
-        <property name="text">
-         <string>Attribute</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
-     </item>
     </layout>
+   </item>
+   <item row="0" column="1">
+    <widget class="QTextEdit" name="textEdit"/>
    </item>
   </layout>
  </widget>

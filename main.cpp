@@ -7,6 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     PortAudioWrapper portAudioObject;
     MainWindow w;
+
     w.show();
 
 

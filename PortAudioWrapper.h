@@ -6,7 +6,7 @@
 #include <list>
 
 
-class AudioDevice;
+class AudioDevice; // declaration
 
 // this class is intended to be a wrapper for portaudio.h
 class PortAudioWrapper{
@@ -14,6 +14,9 @@ public:
     PortAudioWrapper();
     ~PortAudioWrapper();
     std::string errorToText() const {return  errorText;}
+    const std::list<AudioDevice*> getDevicesList() const;
+    static int getDefaultInputDeviceIndex() ;
+    static int getDefaultOutputDeviceIndex() ;
 
 private:
     std::string errorText;
@@ -28,6 +31,10 @@ class AudioDevice
 public:
     AudioDevice(const PaDeviceInfo *deviceInfo, const PaDeviceIndex indexDevice);
     ~AudioDevice();
+
+    std::string toString() const;
+
+    // getters methods
     int indexDevice() const {return paIndexDevice;}
     std::string  name() const {return deviceInfo->name;}
     std::string hostApi() const {return Pa_GetHostApiInfo( deviceInfo->hostApi )->name;}
@@ -37,8 +44,7 @@ public:
     double defaultLowInputLatency() const {return deviceInfo->defaultLowInputLatency;}
     double defaultLowOutputLatency() const {return deviceInfo->defaultLowOutputLatency;}
     double defaultHighInputLatency() const {return deviceInfo->defaultHighInputLatency;}
-    double defaultHighOutputLatency() const {return defaultHighOutputLatency();}
-
+    double defaultHighOutputLatency() const {return deviceInfo->defaultHighInputLatency;}
 
 private:
     const PaDeviceInfo *deviceInfo;

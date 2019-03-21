@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/media/general_icon.png"));
+
 }
 
 MainWindow::~MainWindow()
@@ -16,11 +18,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionDevices_triggered()
 {
-    devicesWidget = new DevicesInfoDialog(this, myPortAudioWrapper);
+    devicesWidget = new DevicesInfoDialog(this, this->myPortAudioWrapper);
 
     devicesWidget->setWindowTitle( tr(" Audio Devices - "
                                 MY_APP_NAME " V" VERSION_OF_APP ));
 
     devicesWidget->show();
-
 }
+

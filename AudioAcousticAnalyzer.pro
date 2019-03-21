@@ -28,14 +28,14 @@ SOURCES += \
         main.cpp \
         MainWindow.cpp \
     DevicesInfoDialog.cpp \
-    DivicesInfo.cpp \
-    PortAudioWrapper.cpp
+    PortAudioWrapper.cpp \
+    MyQlistWidgetItem.cpp
 
 HEADERS += \
         MainWindow.h \
     DevicesInfoDialog.h \
-    DivicesInfo.h \
-    PortAudioWrapper.h
+    PortAudioWrapper.h \
+    MyQlistWidgetItem.h
 
 FORMS += \
         MainWindow.ui \
@@ -57,6 +57,9 @@ else:unix: LIBS += -L$$PWD/../3rdparty_libraries/portaudio/bin/windows/portaudio
 
 INCLUDEPATH += $$PWD/../3rdparty_libraries/portaudio/bin/windows/portaudio_64bits
 DEPENDPATH += $$PWD/../3rdparty_libraries/portaudio/bin/windows/portaudio_64bits
+
+RESOURCES += \
+    resources.qrc
 
 
 

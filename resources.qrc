@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>media/general_icon.png</file>
+        <file>media/microphone.png</file>
+        <file>media/speaker.png</file>
+    </qresource>
+</RCC>
