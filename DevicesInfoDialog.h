@@ -28,8 +28,6 @@ private:
     Ui::DevicesInfoDialog *ui;
      const PortAudioWrapper myPortAudioWrapper;
 
-     void initTableItems();
-
      void listAllDevices();
      void listInputDevices();
      void listOutputDevices();

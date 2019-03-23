@@ -12,25 +12,13 @@ DevicesInfoDialog::DevicesInfoDialog(QWidget *parent, const PortAudioWrapper &my
 {    
     ui->setupUi(this);
 
-
-    initTableItems();
     listAllDevices();
 
-
+    // this gurantees that the information of the first item is shown in the first load
     if(ui->listWidget->count()>0){
-        ui->listWidget->setCurrentRow(0);
+        // this executes on_listWidget_itemClicked()
+        emit ui->listWidget->itemClicked(ui->listWidget->itemAt(0,0));
     }
-
-//        itemId.setText(QString::number(device->indexDevice()));
-//        itemName.setText(QString::fromStdString(device->name()));
-//        itemHostApi.setText(QString::fromStdString(device->hostApi()));
-//        itemMaxInputs.setText(QString::number(device->maxInputChannels()));
-//        itemMaxOutputs.setText(QString::number(device->maxOutputChannels()));
-//        itemDefaultLowInputLatency.setText(QString::number(device->defaultLowInputLatency()));
-//        itemDefaultLowOuputLatency.setText(QString::number(device->defaultLowOutputLatency()));
-//        itemDefaultHighInputLatency.setText(QString::number(device->defaultHighInputLatency()));
-//        itemDefaultHighOuputLatency.setText(QString::number(device->defaultHighOutputLatency()));
-//        itemDefaultSampleRate.setText(QString::number(device->defaultSampleRate()));
 
 }
 
@@ -104,25 +92,6 @@ void DevicesInfoDialog::listDefaultDevices()
         }
     }
 }
-
-
-void DevicesInfoDialog::initTableItems()
-{
-
-
-    // row headers
-    QStringList headers;
-    headers<<"Device Index"<<"Name"<<"Host API"
-          <<"Max Inputs"<<"Max Outputs"
-         <<"Default Low Input Latency"
-        <<"Default Low Output Latency"
-       <<"Default High Input Latency"
-      <<"Default High Output Latency"
-     <<"Default Sample Rate";
-
-
-}
-
 
 
 void DevicesInfoDialog::on_listWidget_itemClicked(QListWidgetItem *item)

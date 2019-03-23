@@ -6,54 +6,129 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
-    <height>373</height>
+    <width>731</width>
+    <height>458</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font-size: 11pt;
+
+</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QComboBox" name="comboBox">
-       <item>
-        <property name="text">
-         <string>All Devices</string>
-        </property>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="tabPosition">
+      <enum>QTabWidget::North</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_1">
+      <attribute name="title">
+       <string>Devices Information</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">
+ font-weight: bold;</string>
+           </property>
+           <property name="text">
+            <string>Devices Information</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QComboBox" name="comboBox">
+               <item>
+                <property name="text">
+                 <string>Show all devices</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Show input devices</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Show output devices</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Show system default devices</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="listWidget">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QListWidget{
+	font-size:9pt;
+}</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="textEdit">
+             <property name="styleSheet">
+              <string notr="true">QTextEdit{
+	font-size:9pt;
+}</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </item>
-       <item>
-        <property name="text">
-         <string>Input Devices</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Output Devices</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Default Devices</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QListWidget" name="listWidget">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <widget class="QTextEdit" name="textEdit"/>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Set Inputs</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Set Outputs</string>
+      </attribute>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>

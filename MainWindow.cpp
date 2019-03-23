@@ -23,6 +23,6 @@ void MainWindow::on_actionDevices_triggered()
     devicesWidget->setWindowTitle( tr(" Audio Devices - "
                                 MY_APP_NAME " V" VERSION_OF_APP ));
 
-    devicesWidget->show();
+    devicesWidget->exec();
 }
 
