@@ -1,5 +1,6 @@
 #include "PortAudioWrapper.h"
 #include <iostream>
+#include "RecordAndPlay.h"
 
 PortAudioWrapper::PortAudioWrapper()
     : errorText("")
@@ -62,6 +63,20 @@ int PortAudioWrapper::getDefaultOutputDeviceIndex()
 {
     return Pa_GetDefaultOutputDevice();
 }
+
+void PortAudioWrapper::record()
+{
+    RecordAndPlay::record();
+
+
+
+}
+
+void PortAudioWrapper::play()
+{
+    RecordAndPlay::play();
+}
+
 
 
 AudioDevice::AudioDevice(const PaDeviceInfo *deviceInfo, const PaDeviceIndex paIndexDevice)

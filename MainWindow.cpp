@@ -26,3 +26,13 @@ void MainWindow::on_actionDevices_triggered()
     devicesWidget->exec();
 }
 
+
+void MainWindow::on_actionRecord_triggered()
+{
+    myPortAudioWrapper.record();
+}
+
+void MainWindow::on_actionPlay_triggered()
+{
+    myPortAudioWrapper.play();
+}

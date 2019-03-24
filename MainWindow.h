@@ -29,6 +29,10 @@ public:
 private slots:
     void on_actionDevices_triggered();
 
+    void on_actionRecord_triggered();
+
+    void on_actionPlay_triggered();
+
 private:
     Ui::MainWindow *ui;
     DevicesInfoDialog *devicesWidget;

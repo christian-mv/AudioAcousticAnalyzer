@@ -35,7 +35,8 @@ HEADERS += \
         MainWindow.h \
     DevicesInfoDialog.h \
     PortAudioWrapper.h \
-    MyQlistWidgetItem.h
+    MyQlistWidgetItem.h \
+    RecordAndPlay.h
 
 FORMS += \
         MainWindow.ui \

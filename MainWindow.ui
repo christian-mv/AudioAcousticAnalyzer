@@ -46,11 +46,23 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionDevices"/>
+   <addaction name="actionRecord"/>
+   <addaction name="actionPlay"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionDevices">
    <property name="text">
     <string>Devices</string>
+   </property>
+  </action>
+  <action name="actionRecord">
+   <property name="text">
+    <string>Record</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="text">
+    <string>Play</string>
    </property>
   </action>
  </widget>

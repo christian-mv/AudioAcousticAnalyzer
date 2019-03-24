@@ -6,7 +6,10 @@
 #include <list>
 
 
+
 class AudioDevice; // declaration
+
+
 
 // this class is intended to be a wrapper for portaudio.h
 class PortAudioWrapper{
@@ -17,12 +20,18 @@ public:
     const std::list<AudioDevice*> getDevicesList() const;
     static int getDefaultInputDeviceIndex() ;
     static int getDefaultOutputDeviceIndex() ;
+    void record();
+    void play();
+
 
 private:
     std::string errorText;
     PaError err;
     PaDeviceIndex numDevices;
     std::list<AudioDevice*> devicesList;
+
+
+
 
 };
 
