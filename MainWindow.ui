@@ -48,6 +48,7 @@
    <addaction name="actionDevices"/>
    <addaction name="actionRecord"/>
    <addaction name="actionPlay"/>
+   <addaction name="actionPlot"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionDevices">
@@ -63,6 +64,11 @@
   <action name="actionPlay">
    <property name="text">
     <string>Play</string>
+   </property>
+  </action>
+  <action name="actionPlot">
+   <property name="text">
+    <string>Plot</string>
    </property>
   </action>
  </widget>

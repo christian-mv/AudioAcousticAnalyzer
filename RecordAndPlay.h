@@ -22,7 +22,7 @@
 
 namespace RecordAndPlay {
 /* #define SAMPLE_RATE  (17932) // Test failure to open with this value. */
-static int SAMPLE_RATE = 44100;
+static int SAMPLE_RATE = 22050;
 static int FRAMES_PER_BUFFER =512;
 static int NUM_SECONDS = 5;
 static int NUM_CHANNELS = 2;
