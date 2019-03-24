@@ -4,6 +4,8 @@
 #include "portaudio.h"
 #include <string>
 #include <list>
+#include "UserDataForPaCallbacks.h"
+
 
 
 
@@ -22,6 +24,8 @@ public:
     static int getDefaultOutputDeviceIndex() ;
     void record();
     void play();
+    paTestData *data;
+
 
 
 private:

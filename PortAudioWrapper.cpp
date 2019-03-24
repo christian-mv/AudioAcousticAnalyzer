@@ -1,5 +1,6 @@
 #include "PortAudioWrapper.h"
 #include <iostream>
+#include <QDebug>
 #include "RecordAndPlay.h"
 
 PortAudioWrapper::PortAudioWrapper()
@@ -66,15 +67,20 @@ int PortAudioWrapper::getDefaultOutputDeviceIndex()
 
 void PortAudioWrapper::record()
 {
-    RecordAndPlay::record();
+
+    data = new paTestData();
+
+    RecordAndPlay::record(data);
 
 
-
+//    for(auto i = 0; i<data.numSamples; i++){
+//        qDebug()<<"i["<<i<<"]: "<<data.recordedSamples[i];
+//    }
 }
 
 void PortAudioWrapper::play()
 {
-    RecordAndPlay::play();
+    RecordAndPlay::play(data);
 }
 
 
