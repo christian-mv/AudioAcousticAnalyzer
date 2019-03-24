@@ -24,6 +24,7 @@ void MainWindow::on_actionDevices_triggered()
 
     devicesWidget->setWindowTitle( tr(" Audio Devices - "
                                 MY_APP_NAME " V" VERSION_OF_APP ));
+
     devicesWidget->exec();
 }
 
@@ -46,33 +47,22 @@ void MainWindow::on_actionPlot_triggered()
 
 void MainWindow::plot()
 {
-    QList<QPointF> points;
-    QPointF p;
-    for(int i=0; i<2*5*22050;i+=2){
-        p.setX(i);
-        p.setY(myPortAudioWrapper.data->recordedSamples[i]);
-        points.push_back(p);
-//        m_series->replace(i,QPointF(i, myPortAudioWrapper.data->recordedSamples[i]));
+
+    for(int i=0; i<myPortAudioWrapper.data->numSamples;i+=2){
+//        m_series->replace(i,0,i, myPortAudioWrapper.data->recordedSamples[i]);
+        m_series->insert(i,QPoint(i,myPortAudioWrapper.data->recordedSamples[i]));
     }
-    m_series->replace(points);
+
 
 }
 
 void MainWindow::initQchart()
 {
-    m_chart = new QChart();
-    m_series = new QLineSeries;
-    int i;
-    for(i=0; i<2*5*22050; i+=2){
-//        m_series->append(i);
-        m_series->insert(i,QPointF(0,0));
-    }
-
     QChartView *chartView = new QChartView(m_chart);
     chartView->setMinimumSize(800, 600);
-    m_chart->addSeries(m_series);qDebug()<<"HERE";
+    m_chart->addSeries(m_series);
     QValueAxis *axisX = new QValueAxis;
-    axisX->setRange(0, i);
+    axisX->setRange(0, 2*22050);
     axisX->setLabelFormat("%g");
     axisX->setTitleText("Samples");
     QValueAxis *axisY = new QValueAxis;
@@ -82,11 +72,8 @@ void MainWindow::initQchart()
     m_chart->setAxisY(axisY, m_series);
     m_chart->legend()->hide();
     m_chart->setTitle("y(t)");
-    QPen pen(Qt::blue);
-    pen.setWidth(0.5);
-    m_series->setPen(pen);
 
-
-    setCentralWidget(chartView);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    mainLayout->addWidget(chartView);
 
 }

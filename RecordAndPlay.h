@@ -170,7 +170,7 @@ int record(paTestData *data)
     }
     for( i=0; i<numSamples; i++ ) data->recordedSamples[i] = 0;
 
-    err = Pa_Initialize();
+//    err = Pa_Initialize();
     if( err != paNoError ) goto done;
 
     inputParameters.device = Pa_GetDefaultInputDevice(); /* default input device */
@@ -206,7 +206,7 @@ int record(paTestData *data)
     }
     if( err < 0 ) goto done;
 
-    err = Pa_CloseStream( stream );
+//    err = Pa_CloseStream( stream );
     if( err != paNoError ) goto done;
 
 
@@ -231,7 +231,7 @@ int record(paTestData *data)
 
 
 done:
-    Pa_Terminate();
+//    Pa_Terminate();
     if( err != paNoError )
     {
         fprintf( stderr, "An error occured while using the portaudio stream\n" );
@@ -239,10 +239,6 @@ done:
         fprintf( stderr, "Error message: %s\n", Pa_GetErrorText( err ) );
         err = 1;          /* Always return 0 or 1, but no other return codes. */
     }
-
-
-
-
 
     return err;
 
@@ -292,7 +288,7 @@ int play(paTestData *data){
     }
 
 done:
-    Pa_Terminate();
+//    Pa_Terminate();
 //    if( data->recordedSamples )       /* Sure it is NULL or valid. */
 //        free( data->recordedSamples );
     if( err != paNoError )

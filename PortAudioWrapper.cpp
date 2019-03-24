@@ -4,7 +4,7 @@
 #include "RecordAndPlay.h"
 
 PortAudioWrapper::PortAudioWrapper()
-    : errorText("")
+    : errorText(""), data(nullptr)
 {
     // init PortAudio
     err = Pa_Initialize();
@@ -67,11 +67,14 @@ int PortAudioWrapper::getDefaultOutputDeviceIndex()
 
 void PortAudioWrapper::record()
 {
-
-    data = new paTestData();
-
+    if(data == nullptr){
+        data = new paTestData();
+    }else{
+//        qDebug()<<"Deleting paTestData";
+        delete [] data->recordedSamples;
+        data = new paTestData();
+    }
     RecordAndPlay::record(data);
-
 
 //    for(auto i = 0; i<data.numSamples; i++){
 //        qDebug()<<"i["<<i<<"]: "<<data.recordedSamples[i];

@@ -39,13 +39,16 @@ private slots:
     void on_actionPlot_triggered();
 
     void plot();
+    void initQchart();
 
 
 private:
     Ui::MainWindow *ui;
     DevicesInfoDialog *devicesWidget;
     PortAudioWrapper myPortAudioWrapper;
-    QLineSeries *series;
+    QLineSeries *m_series;
+    QChart *m_chart;
+
 };
 
 
